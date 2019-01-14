@@ -5,17 +5,64 @@
  */
 package dispensador;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author calol
  */
 public class Tecnico extends javax.swing.JFrame {
 
+    Variables cn = new Variables();
     /**
      * Creates new form Tecnico
      */
     public Tecnico() {
         initComponents();
+    }
+    
+    private String Nombre_Producto(int pos){
+        String nombre = "";
+        switch(pos){
+            case 0:
+                nombre = ("Shampoo para mascotas");
+                break;
+            case 1:
+                nombre = ("Jabón para mascotas");
+                break;
+            case 2:
+                nombre = ("Galletas para mascotas");
+                break;
+            case 3:
+                nombre = ("Huesos");
+                break;
+            case 4:
+                nombre = ("Collares para razas pequeñas");
+                break;
+            case 5:
+                nombre = ("Collares para razas grandes");
+                break;
+            case 6:
+                nombre = ("Juguetes para mascotas");
+                break;
+            case 7:
+                nombre = ("Croquetas - Dog Star");
+                break;
+            case 8:
+                nombre = ("Croquetas - Pro Can");
+                break;
+            case 9:
+                nombre = ("Croquetas - Dog Chow");
+                break;
+            case 10:
+                nombre = ("Croquetas - Nutri Can");
+                break;
+        }
+        return nombre;
     }
 
     /**
@@ -38,6 +85,11 @@ public class Tecnico extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Mostrar Stock Vendido");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -46,10 +98,25 @@ public class Tecnico extends javax.swing.JFrame {
         jLabel2.setText("Seleccione una opción");
 
         jButton2.setText("Añadir Stock");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Producto mayor venta");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Producto menor venta");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Salir");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -106,10 +173,30 @@ public class Tecnico extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Ventas f = new Ventas();
+        f.setVisible (true); 
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Nuevo_Stock f = new Nuevo_Stock();
+        f.setVisible (true); 
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int resumen = cn.Producto_Mayor_Venta();
+        JOptionPane.showMessageDialog(null, "El producto más vendido es "+Nombre_Producto(resumen)+"."  , "Alert", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        int resumen = cn.Producto_Menor_Venta();
+        JOptionPane.showMessageDialog(null, "El producto menos vendido es "+Nombre_Producto(resumen)+"."  , "Alert", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws SQLException, ClassNotFoundException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

@@ -10,7 +10,7 @@ package dispensador;
  * @author calol
  */
 public class Dispensador {
-
+    
     /**
      * @param args the command line arguments
      */
@@ -19,5 +19,4 @@ public class Dispensador {
         Principal f = new Principal();
         f.setVisible (true); 
     }
-    
 }

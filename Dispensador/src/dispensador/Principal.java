@@ -47,6 +47,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButton2.setText("USUARIO");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("SALIR");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -102,8 +107,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Inicio_Tecnico f = new Inicio_Tecnico();
-        f.setVisible (true);         // TODO add your handling code here:
+        f.setVisible (true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Usuario f = new Usuario();
+        f.setVisible (true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
