@@ -10,7 +10,7 @@ package dispensador;
  * @author calol
  */
 public class Croquetas extends javax.swing.JFrame {
-    Variables v= new Variables();
+    Clase_Inventario inventario = new Clase_Inventario();
     /**
      * Creates new form Croquetas
      */
@@ -19,7 +19,7 @@ public class Croquetas extends javax.swing.JFrame {
     }
     
     private void Selecciona(int pos){
-        v.Seleccionar_Item(pos);
+        inventario.Set_Seleccion(pos); 
         PuntoVenta f = new PuntoVenta();
         f.setVisible (true);
     }

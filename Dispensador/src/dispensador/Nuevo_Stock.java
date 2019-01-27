@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class Nuevo_Stock extends javax.swing.JFrame {
 
-    Variables v = new Variables();
+    Clase_Inventario inventario = new Clase_Inventario();
     
     public Nuevo_Stock() {
         initComponents();
@@ -128,7 +128,7 @@ public class Nuevo_Stock extends javax.swing.JFrame {
         try{
             cantidad = Integer.parseInt(jTextField1.getText());
             if (cantidad>=1){
-                v.Asignar_Stock(pos, cantidad);
+                inventario.Sumar_Inventario(cantidad);
                 JOptionPane.showMessageDialog(null, "Stock añadido.", "Alert", JOptionPane.INFORMATION_MESSAGE);
                 this.dispose();
             }else{

@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class Tecnico extends javax.swing.JFrame {
 
-    Variables cn = new Variables();
+    Clase_Reportes reportes = new Clase_Reportes();
     /**
      * Creates new form Tecnico
      */
@@ -25,46 +25,6 @@ public class Tecnico extends javax.swing.JFrame {
         initComponents();
     }
     
-    private String Nombre_Producto(int pos){
-        String nombre = "";
-        switch(pos){
-            case 0:
-                nombre = ("Shampoo para mascotas");
-                break;
-            case 1:
-                nombre = ("Jabón para mascotas");
-                break;
-            case 2:
-                nombre = ("Galletas para mascotas");
-                break;
-            case 3:
-                nombre = ("Huesos");
-                break;
-            case 4:
-                nombre = ("Collares para razas pequeñas");
-                break;
-            case 5:
-                nombre = ("Collares para razas grandes");
-                break;
-            case 6:
-                nombre = ("Juguetes para mascotas");
-                break;
-            case 7:
-                nombre = ("Croquetas - Dog Star");
-                break;
-            case 8:
-                nombre = ("Croquetas - Pro Can");
-                break;
-            case 9:
-                nombre = ("Croquetas - Dog Chow");
-                break;
-            case 10:
-                nombre = ("Croquetas - Nutri Can");
-                break;
-        }
-        return nombre;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -184,13 +144,13 @@ public class Tecnico extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        int resumen = cn.Producto_Mayor_Venta();
-        JOptionPane.showMessageDialog(null, "El producto más vendido es "+Nombre_Producto(resumen)+"."  , "Alert", JOptionPane.INFORMATION_MESSAGE);
+        String resumen = reportes.Mayor_Venta();
+        JOptionPane.showMessageDialog(null, "El producto más vendido es "+resumen+"."  , "Alert", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        int resumen = cn.Producto_Menor_Venta();
-        JOptionPane.showMessageDialog(null, "El producto menos vendido es "+Nombre_Producto(resumen)+"."  , "Alert", JOptionPane.INFORMATION_MESSAGE);
+        String resumen = reportes.Menor_Venta();
+        JOptionPane.showMessageDialog(null, "El producto menos vendido es "+resumen+"."  , "Alert", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author calol
  */
 public class PuntoVenta extends javax.swing.JFrame {
-    Variables v = new Variables();
+    Clase_Ventas ventas = new Clase_Ventas();
     
     /**
      * Creates new form PuntoVenta
@@ -23,7 +23,7 @@ public class PuntoVenta extends javax.swing.JFrame {
     }
     
     private void Seleccion(){
-        switch(v.Item_Seleccionado()){
+        switch(ventas.Get_Seleccion()){
             case 0:
                 jLabel4.setText("Shampoo para mascotas");
                 break;
@@ -164,7 +164,7 @@ public class PuntoVenta extends javax.swing.JFrame {
         try{
             cantidad = Integer.parseInt(jTextField1.getText());
             if (cantidad>=1){
-                v.Asignar(v.Item_Seleccionado(), cantidad);
+                ventas.Suma_Ventas(cantidad);
                 JOptionPane.showMessageDialog(null, "Gracias por su compra.", "Alert", JOptionPane.INFORMATION_MESSAGE);
                 this.dispose();
             }else{

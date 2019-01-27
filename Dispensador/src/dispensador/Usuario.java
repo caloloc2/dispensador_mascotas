@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author calol
  */
 public class Usuario extends javax.swing.JFrame {
-    Variables v = new Variables();
+    Clase_Inventario inventario = new Clase_Inventario();
     
     public Usuario() {
         initComponents();
@@ -171,7 +171,7 @@ public class Usuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Selecciona(int pos){
-        v.Seleccionar_Item(pos);
+        inventario.Set_Seleccion(pos);      
         PuntoVenta f = new PuntoVenta();
         f.setVisible (true);
     }
@@ -210,7 +210,7 @@ public class Usuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        JOptionPane.showMessageDialog(null, v.Obtener_Informacion(), "Alert", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, inventario.Get_Recomendacion(), "Alert", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed

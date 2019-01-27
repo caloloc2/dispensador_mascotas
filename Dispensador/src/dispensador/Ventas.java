@@ -11,7 +11,7 @@ package dispensador;
  */
 public class Ventas extends javax.swing.JFrame {
 
-    Variables v = new Variables();
+    Clase_Ventas ventas = new Clase_Ventas();
     
     public Ventas() {
         initComponents();
@@ -22,64 +22,65 @@ public class Ventas extends javax.swing.JFrame {
     }
     
     private void Mostrar_Ventas(int pos){
-        int stock = v.Obtener_Stock(pos);
-        int ventas = v.Lectura(pos);
-        int actual = stock - ventas;
+        int st = ventas.Get_Stock(pos);
+        int vn = ventas.Get_Ventas(pos) ;
+        int actual = st - vn;
+        
         switch(pos){
             case 0:
-                jLabel7.setText(Integer.toString(stock));
+                jLabel7.setText(Integer.toString(st));
                 jLabel8.setText(Integer.toString(actual));
-                jLabel9.setText(Integer.toString(ventas));
+                jLabel9.setText(Integer.toString(vn));
                 break;
             case 1:
-                jLabel10.setText(Integer.toString(stock));
+                jLabel10.setText(Integer.toString(st));
                 jLabel11.setText(Integer.toString(actual));
-                jLabel12.setText(Integer.toString(ventas));
+                jLabel12.setText(Integer.toString(vn));
                 break;
             case 2:
-                jLabel14.setText(Integer.toString(stock));
+                jLabel14.setText(Integer.toString(st));
                 jLabel15.setText(Integer.toString(actual));
-                jLabel16.setText(Integer.toString(ventas));
+                jLabel16.setText(Integer.toString(vn));
                 break;
             case 3:
-                jLabel19.setText(Integer.toString(stock));
+                jLabel19.setText(Integer.toString(st));
                 jLabel18.setText(Integer.toString(actual));
-                jLabel20.setText(Integer.toString(ventas));
+                jLabel20.setText(Integer.toString(vn));
                 break;
             case 4:
-                jLabel22.setText(Integer.toString(stock));
+                jLabel22.setText(Integer.toString(st));
                 jLabel23.setText(Integer.toString(actual));
-                jLabel24.setText(Integer.toString(ventas));
+                jLabel24.setText(Integer.toString(vn));
                 break;
             case 5:
-                jLabel26.setText(Integer.toString(stock));
+                jLabel26.setText(Integer.toString(st));
                 jLabel27.setText(Integer.toString(actual));
-                jLabel28.setText(Integer.toString(ventas));
+                jLabel28.setText(Integer.toString(vn));
                 break;
             case 6:
-                jLabel30.setText(Integer.toString(stock));
+                jLabel30.setText(Integer.toString(st));
                 jLabel31.setText(Integer.toString(actual));
-                jLabel32.setText(Integer.toString(ventas));
+                jLabel32.setText(Integer.toString(vn));
                 break;
             case 7:
-                jLabel34.setText(Integer.toString(stock));
+                jLabel34.setText(Integer.toString(st));
                 jLabel35.setText(Integer.toString(actual));
-                jLabel36.setText(Integer.toString(ventas));
+                jLabel36.setText(Integer.toString(vn));
                 break;
             case 8:
-                jLabel38.setText(Integer.toString(stock));
+                jLabel38.setText(Integer.toString(st));
                 jLabel39.setText(Integer.toString(actual));
-                jLabel40.setText(Integer.toString(ventas));
+                jLabel40.setText(Integer.toString(vn));
                 break;
             case 9:
-                jLabel42.setText(Integer.toString(stock));
+                jLabel42.setText(Integer.toString(st));
                 jLabel43.setText(Integer.toString(actual));
-                jLabel44.setText(Integer.toString(ventas));
+                jLabel44.setText(Integer.toString(vn));
                 break;
             case 10:
-                jLabel46.setText(Integer.toString(stock));
+                jLabel46.setText(Integer.toString(st));
                 jLabel47.setText(Integer.toString(actual));
-                jLabel48.setText(Integer.toString(ventas));
+                jLabel48.setText(Integer.toString(vn));
                 break;
         }        
     }
