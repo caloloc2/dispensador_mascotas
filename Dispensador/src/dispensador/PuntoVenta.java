@@ -26,36 +26,47 @@ public class PuntoVenta extends javax.swing.JFrame {
         switch(ventas.Get_Seleccion()){
             case 0:
                 jLabel4.setText("Shampoo para mascotas");
+                jLabel7.setText(Integer.toString(ventas.Get_Precio(ventas.Get_Seleccion()))+" USD");
                 break;
             case 1:
                 jLabel4.setText("Jabón para mascotas");
+                jLabel7.setText(Integer.toString(ventas.Get_Precio(ventas.Get_Seleccion()))+" USD");
                 break;
             case 2:
                 jLabel4.setText("Galletas para mascotas");
+                jLabel7.setText(Integer.toString(ventas.Get_Precio(ventas.Get_Seleccion()))+" USD");
                 break;
             case 3:
                 jLabel4.setText("Huesos");
+                jLabel7.setText(Integer.toString(ventas.Get_Precio(ventas.Get_Seleccion()))+" USD");
                 break;
             case 4:
                 jLabel4.setText("Collares para razas pequeñas");
+                jLabel7.setText(Integer.toString(ventas.Get_Precio(ventas.Get_Seleccion()))+" USD");
                 break;
             case 5:
                 jLabel4.setText("Collares para razas grandes");
+                jLabel7.setText(Integer.toString(ventas.Get_Precio(ventas.Get_Seleccion()))+" USD");
                 break;
             case 6:
                 jLabel4.setText("Juguetes para mascotas");
+                jLabel7.setText(Integer.toString(ventas.Get_Precio(ventas.Get_Seleccion()))+" USD");
                 break;
             case 7:
                 jLabel4.setText("Croquetas - Dog Star");
+                jLabel7.setText(Integer.toString(ventas.Get_Precio(ventas.Get_Seleccion()))+" USD");
                 break;
             case 8:
                 jLabel4.setText("Croquetas - Pro Can");
+                jLabel7.setText(Integer.toString(ventas.Get_Precio(ventas.Get_Seleccion()))+" USD");
                 break;
             case 9:
                 jLabel4.setText("Croquetas - Dog Chow");
+                jLabel7.setText(Integer.toString(ventas.Get_Precio(ventas.Get_Seleccion()))+" USD");
                 break;
             case 10:
                 jLabel4.setText("Croquetas - Nutri Can");
+                jLabel7.setText(Integer.toString(ventas.Get_Precio(ventas.Get_Seleccion()))+" USD");
                 break;
         }
     }
@@ -77,6 +88,10 @@ public class PuntoVenta extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,6 +105,21 @@ public class PuntoVenta extends javax.swing.JFrame {
 
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField1.setText("1");
+        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField1FocusLost(evt);
+            }
+        });
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
 
         jLabel5.setText("unidades");
 
@@ -106,6 +136,14 @@ public class PuntoVenta extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+
+        jLabel6.setText("Precio Unitario:");
+
+        jLabel7.setText("0.00");
+
+        jLabel8.setText("Total a Pagar:");
+
+        jLabel9.setText("0.00");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,7 +166,15 @@ public class PuntoVenta extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel8))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -145,11 +191,19 @@ public class PuntoVenta extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
 
         pack();
@@ -164,9 +218,13 @@ public class PuntoVenta extends javax.swing.JFrame {
         try{
             cantidad = Integer.parseInt(jTextField1.getText());
             if (cantidad>=1){
-                ventas.Suma_Ventas(cantidad);
-                JOptionPane.showMessageDialog(null, "Gracias por su compra.", "Alert", JOptionPane.INFORMATION_MESSAGE);
-                this.dispose();
+                if ((ventas.Get_Stock(ventas.Get_Seleccion()))>=cantidad){
+                    ventas.Suma_Ventas(cantidad);
+                    JOptionPane.showMessageDialog(null, "Gracias por su compra.", "Alert", JOptionPane.INFORMATION_MESSAGE);
+                    this.dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null, "La cantidad es mayor al stock actual.", "Alert", JOptionPane.ERROR_MESSAGE);
+                }                
             }else{
                 JOptionPane.showMessageDialog(null, "Ingresar cantidad mayor o igual a 1.", "Alert", JOptionPane.ERROR_MESSAGE);
             }
@@ -176,6 +234,32 @@ public class PuntoVenta extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jTextField1FocusLost
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        // TODO add your handling code here:
+        int cantidad =  1;
+        int valor = 0;
+        try{
+            cantidad = Integer.parseInt(jTextField1.getText());
+            valor = ventas.Get_Precio(ventas.Get_Seleccion());
+            
+            int total = cantidad * valor;
+            
+            jLabel9.setText(Integer.toString(total)+" USD");
+        }catch(Exception e){
+            System.out.println("Solo acepta numeros");
+            System.out.println(e.getMessage().toString());
+        }
+    }//GEN-LAST:event_jTextField1KeyPressed
 
     /**
      * @param args the command line arguments
@@ -220,6 +304,10 @@ public class PuntoVenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -38,7 +38,7 @@ public class Dispensador {
         inventario.Set_Stock(9, 0);
         inventario.Set_Stock(10, 0);
         
-        // Asignacion de Ventas Iniciales 
+        // Asignacion de Ventas Iniciales
         inventario.Set_Ventas(0, 0);
         inventario.Set_Ventas(1, 0);
         inventario.Set_Ventas(2, 0);
@@ -50,6 +50,19 @@ public class Dispensador {
         inventario.Set_Ventas(8, 0);
         inventario.Set_Ventas(9, 0);
         inventario.Set_Ventas(10, 0);
+        
+        // Asignacion de Precios
+        inventario.Set_Precio(0, 1);
+        inventario.Set_Precio(1, 2);
+        inventario.Set_Precio(2, 3);
+        inventario.Set_Precio(3, 4);
+        inventario.Set_Precio(4, 5);
+        inventario.Set_Precio(5, 4);
+        inventario.Set_Precio(6, 3);
+        inventario.Set_Precio(7, 2);
+        inventario.Set_Precio(8, 1);
+        inventario.Set_Precio(9, 2);
+        inventario.Set_Precio(10, 3);
         
         Principal f = new Principal();
         f.setVisible (true); 

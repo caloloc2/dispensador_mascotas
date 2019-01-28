@@ -1,12 +1,13 @@
 package dispensador;
 
 public abstract class Clase_Variables {
-    private static int[][] inventario = new int[11][2]; // contiene el stock y ventas de productos
+    private static int[][] inventario = new int[11][3]; // contiene el stock y ventas de productos
     private static String[] items = new String[11]; // contiene los nombres de los productos
     private static String recomendaciones;
     private static int seleccionado;
     
-    public Clase_Variables(){}
+    public Clase_Variables(){
+    }
     
     // Items
     public void Set_Nombre(int id, String nombre){
@@ -38,6 +39,17 @@ public abstract class Clase_Variables {
     public int Get_Ventas(int id){
         System.out.println(id);
         return this.inventario[id][1];
+    }
+    
+    // Precios
+    public void Set_Precio(int id, int valor){
+        this.inventario[id][2] = valor;
+        System.out.println(this.inventario[id][1]);
+    }
+    
+    public int Get_Precio(int id){
+        System.out.println(id);
+        return this.inventario[id][2];
     }
     
     // Item Seleccionado
